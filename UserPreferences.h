@@ -18,3 +18,7 @@ struct UserPreferences {
 
     string transmission;
     string drivetrain;
+
+    double minPrice;
+    double maxPrice;
+};
