@@ -3,6 +3,11 @@
 #include <sstream>
 #include <iostream>
 
+// This file Loads all cars from the dataset and parses each row into the Car Object,
+// All the cars are stored in vector for filtering and sorting
+
+
+
 using namespace std;
 
 vector<Car> DatasetLoader::loadCSV(const string& filepath) {

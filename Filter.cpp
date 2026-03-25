@@ -2,6 +2,9 @@
 
 using namespace std;
 
+// applyFilters filters the dataset of cars based on all criteria (manufacturer, model, minYear, maxYear, etc..)
+// returns cars that only match that criteria
+
 vector<Car> Filter::applyFilters(const vector<Car>& cars, const Preferences& prefs) {
     vector<Car> filteredCars;
 

@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// Defining car object with same attributes as columns in the datasheet
+
 struct Car {
     string manufacturer;
     string model;
