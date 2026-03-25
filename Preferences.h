@@ -5,7 +5,7 @@
 #include <string>
 
 using namespace std;
-
+//stores all user filters and their respective weights
 struct Preferences {
     string manufacturer;
     string model;

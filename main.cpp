@@ -16,7 +16,7 @@ using namespace chrono;
 
 void displayTopMatches(const vector<ScoredCar>& cars, int limit) {
     int displayCount = min((int)cars.size(), limit);
-
+//handle no match case
     if (displayCount == 0) {
         cout << "No matching vehicles found." << endl;
         return;
@@ -45,6 +45,7 @@ int main() {
     cout << "Cars loaded: " << allCars.size() << endl << endl;
 
     Preferences prefs = UI::getUserPreferences();
+//ensure scoring is balanced
     normalizeWeights(prefs);
 
     vector<Car> filteredCars = Filter::applyFilters(allCars, prefs);
@@ -57,7 +58,7 @@ int main() {
         cout << "No matching vehicles found." << endl;
         return 0;
     }
-
+//create separate copies so each cycle can run
     vector<ScoredCar> mergeCars = scoredCars;
     vector<ScoredCar> cycleCars = scoredCars;
 

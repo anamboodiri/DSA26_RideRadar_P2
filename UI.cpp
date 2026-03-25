@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//welcome message
 void UI::displayWelcomeMessage() {
     cout << "==========================================" << endl;
     cout << "         Welcome to RideRadar" << endl;
@@ -11,6 +12,7 @@ void UI::displayWelcomeMessage() {
     cout << "==========================================" << endl << endl;
 }
 
+//prompts for pref, stors in struct
 Preferences UI::getUserPreferences() {
     Preferences prefs;
 
@@ -19,7 +21,7 @@ Preferences UI::getUserPreferences() {
 
     cout << "Enter model (or leave blank): ";
     getline(cin, prefs.model);
-
+//defaults to zero:
     string min;
     cout << "Enter minimum year: ";
     getline(cin, min);
@@ -29,7 +31,7 @@ Preferences UI::getUserPreferences() {
     else {
         prefs.minYear = stoi(min);
     }
-
+//defaults to large number if blank
     string max;
     cout << "Enter maximum year: ";
     getline(cin, max);
@@ -59,10 +61,10 @@ Preferences UI::getUserPreferences() {
     else {
         prefs.maxMileage = stoi(maxMile);
     }
-
+//USER OPTIONAL:
     cout << "Enter transmission (or leave blank): ";
     getline(cin, prefs.transmission);
-
+//USER OPTIONAL:
     cout << "Enter drivetrain (or leave blank): ";
     getline(cin, prefs.drivetrain);
 
@@ -88,7 +90,7 @@ Preferences UI::getUserPreferences() {
 
     return prefs;
 }
-
+//display
 void UI::displayFilteredResultsCount(int count) {
     cout << endl;
     cout << "Number of matching vehicles found: " << count << endl;

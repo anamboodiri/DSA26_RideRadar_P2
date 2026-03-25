@@ -5,7 +5,7 @@
 #include "Preferences.h"
 
 using namespace std;
-
+//handle all user interaction
 class UI {
 public:
     static Preferences getUserPreferences();
