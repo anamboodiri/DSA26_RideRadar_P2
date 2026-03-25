@@ -5,7 +5,7 @@ void normalizeWeights(Preferences& prefs) {
     double total = prefs.priceW + prefs.mileageW + prefs.mpgW + prefs.yearW;
 
     if (total == 0.0) {
-        prefs.priceW = 0.25;
+        prefs.priceW = 0.25; //Default Weights
         prefs.mileageW = 0.25;
         prefs.mpgW = 0.25;
         prefs.yearW = 0.25;
@@ -15,7 +15,7 @@ void normalizeWeights(Preferences& prefs) {
     prefs.priceW /= total;
     prefs.mileageW /= total;
     prefs.mpgW /= total;
-    prefs.yearW /= total;
+    prefs.yearW /= total; // Unused as currently written, but prepared to later advance the project further into a better piece
 }
 
 vector<ScoredCar> scoreCars(const vector<Car>& cars, const Preferences& prefs) {
@@ -30,7 +30,7 @@ vector<ScoredCar> scoreCars(const vector<Car>& cars, const Preferences& prefs) {
     int maxYear = cars[0].year;
 
     for (const Car& car : cars) {
-        if (car.price < minPrice) minPrice = car.price;
+        if (car.price < minPrice) minPrice = car.price; //Normalizes scores to compare among one another
         if (car.mileage < minMileage) minMileage = car.mileage;
         if (car.mpg > maxMPG) maxMPG = car.mpg;
         if (car.year < minYear) minYear = car.year;
@@ -38,13 +38,13 @@ vector<ScoredCar> scoreCars(const vector<Car>& cars, const Preferences& prefs) {
     }
 
     for (const Car& car : cars) {
-        double priceScore = (car.price == 0) ? 0.0 : minPrice / car.price;
+        double priceScore = (car.price == 0) ? 0.0 : minPrice / car.price; //Continued from earlier, now scoring the cars comparitively
         double mileageScore = (car.mileage == 0) ? 0.0 : double(minMileage) / car.mileage;
         double mpgScore = (maxMPG == 0) ? 0.0 : double(car.mpg) / maxMPG;
         double yearScore = 1.0;
 
         if (maxYear != minYear) {
-            yearScore = double(car.year - minYear) / (maxYear - minYear);
+            yearScore = double(car.year - minYear) / (maxYear - minYear); //Takes difference of years for scoring purposes
         }
 
         double totalScore =
