@@ -4,7 +4,11 @@ project(DSA26_RideRadar_P2)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(DSA26_RideRadar_P2
+        main.cpp
         DatasetLoader.cpp
         Filter.cpp
-        Filter.h
+        UI.cpp
+        ScoredCar.cpp
+        Scoring.cpp
+        Sorting.cpp
 )

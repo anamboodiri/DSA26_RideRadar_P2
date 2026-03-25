@@ -34,11 +34,14 @@ vector<Car> DatasetLoader::loadCSV(const string& filepath) {
             car.year = stoi(token);
 
             getline(ss, token, ',');
+            token.erase(remove(token.begin(), token.end(), ','), token.end());
             car.mileage = stoi(token);
 
             getline(ss, car.transmission, ',');
             getline(ss, car.drivetrain, ',');
-            getline(ss, car.mpg_range, ',');
+
+            getline(ss, token, ',');
+            car.mpg = stoi(token);
 
             getline(ss, token, ',');
             car.price = stod(token);

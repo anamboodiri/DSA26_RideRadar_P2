@@ -6,7 +6,7 @@
 
 using namespace std;
 
-struct UserPreferences {
+struct Preferences {
     string manufacturer;
     string model;
 
@@ -21,4 +21,9 @@ struct UserPreferences {
 
     double minPrice;
     double maxPrice;
+
+    double priceW = 1.0;
+    double mileageW = 1.0;
+    double mpgW = 1.0;
+    double yearW = 1.0;
 };

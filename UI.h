@@ -2,13 +2,13 @@
 // Created by Ahan Soni on 3/20/26.
 //
 #pragma once
-#include "UserPreferences.h"
+#include "Preferences.h"
 
 using namespace std;
 
 class UI {
 public:
-    static UserPreferences getUserPreferences();
+    static Preferences getUserPreferences();
     static void displayWelcomeMessage();
     static void displayFilteredResultsCount(int count);
 };

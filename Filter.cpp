@@ -2,7 +2,7 @@
 
 using namespace std;
 
-vector<Car> Filter::applyFilters(const vector<Car>& cars, const UserPreferences& prefs) {
+vector<Car> Filter::applyFilters(const vector<Car>& cars, const Preferences& prefs) {
     vector<Car> filteredCars;
 
     for (const Car& car : cars) {

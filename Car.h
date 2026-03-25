@@ -10,7 +10,7 @@ struct Car {
     int mileage;
     string transmission;
     string drivetrain;
-    string mpg_range;
+    int mpg;
     double price;
     double score;
 };
